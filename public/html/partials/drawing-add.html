@@ -1,0 +1,26 @@
+<div>
+	<h1 class="text-center">
+		Ajouter un dessin à Dessine Moi Charlie
+	</h1>
+	<form ng-submit="submit()">
+		<div class="form-group">
+			<label for="titre">Titre</label>
+			<input type="text" id="titre" class="form-control" ng-model="drawing.title">
+		</div>
+
+		<div class="form-group">
+			<label for="description">Description</label>
+			<input type="text" id="description" class="form-control" ng-model="drawing.description">
+		</div>
+
+		<div class="form-group">
+			<label for="url">URL</label>
+			<input type="url" id="url" class="form-control" ng-model="drawing.url">
+		</div>
+
+		<div>
+			<button type="submit" class="btn btn-default">Envoyer</button>
+			<span>* Soumis à validation</span>
+		</div>
+	</form>
+</div>

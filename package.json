@@ -1,0 +1,30 @@
+{
+  "name": "dessinemoicharlie",
+  "version": "0.0.0",
+  "description": "A simple API / website to discover the Charlie Hebdo drawings",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arnaudbreton/dessinemoicharlie"
+  },
+  "keywords": [
+    "#JeSuisCharlie"
+  ],
+  "author": "Arnaud Breton <arn.breton@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arnaudbreton/dessinemoicharlie/issues"
+  },
+  "homepage": "https://github.com/arnaudbreton/dessinemoicharlie",
+  "dependencies": {
+    "body-parser": "^1.10.1",
+    "errorhandler": "^1.3.2",
+    "express": "^4.10.7",
+    "mailjet-sendemail": "^1.1.3",
+    "method-override": "^2.3.1",
+    "mongoose": "^3.8.21"
+  }
+}

@@ -1,0 +1,21 @@
+.current-image-container {
+	margin-top: 20px;
+}
+.current-image {
+	margin-bottom: 20px;
+}
+
+.created-by {
+	font-size: 10px;
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 60px;
+}
+
+.footer .container {
+	padding-top: 20px;
+}
