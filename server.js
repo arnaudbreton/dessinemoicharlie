@@ -22,7 +22,7 @@ app.use(errorHandler({ dumpExceptions: true, showStack: true }));
 
 // Endpoints
 app.get('/', function (req, res) {
-  res.sendfile(application_root + '/public/html/index.html');
+  res.sendFile(application_root + '/public/html/index.html');
 });
 
 app.get('/api/drawing', function (req, res) {
@@ -117,4 +117,10 @@ app.put('/api/drawing/:id', function (req, res){
 });
 
 // Launch server
-app.listen(process.env.PORT);
+var server = app.listen(process.env.PORT, function () {
+
+  var host = server.address().address;
+  var port = server.address().port;
+
+  console.log('Dessine Moi Charlie listening at http://%s:%s', host, port);
+});

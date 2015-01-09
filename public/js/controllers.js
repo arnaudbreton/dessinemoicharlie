@@ -19,8 +19,8 @@ dessinemoicharlieControllers
 
         $scope.submit = function () {
             return $http.post('/api/drawing', {
-                title: $scope.drawing.title,
-                description: $scope.drawing.description,
+                title: "Website import",
+                description: "",
                 url: $scope.drawing.url
             }).success(function () {
                 $location.path('/add-drawing-success');
