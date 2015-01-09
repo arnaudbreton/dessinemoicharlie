@@ -78,15 +78,15 @@ app.get('/api/drawing/random', function (req, res){
 		.where('rnd').gte(random)
 		.where('approved').equals(true)
 		.limit(1).exec(function (err, drawing) {
-		// if (!err && !drawing.length) {
-		// 	models.Drawing
-  //     .where('rnd').lte(random)
-  //     .where('approved').equals(true)
-  //     .limit(1).exec(callback);
-		// }
-		// else {
-			callback(err, drawing);
-		// }
+  		if (!err && !drawing.length) {
+  			models.Drawing
+        .where('rnd').lte(random)
+        .where('approved').equals(true)
+        .limit(1).exec(callback);
+  		}
+  		else {
+  			callback(err, drawing);
+  		}
 	})
 });
 
