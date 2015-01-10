@@ -18,6 +18,7 @@ mongoose.connect(process.env.MONGO_URL);
 app.use(bodyParser.json());
 app.use(methodOverride());
 app.use(express.static(path.join(application_root, "public")));
+app.use('/bower_components',  express.static(path.join(application_root, '/bower_components')));
 app.use(errorHandler({ dumpExceptions: true, showStack: true }));
 
 // Endpoints

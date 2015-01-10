@@ -1,4 +1,8 @@
-dessinemoicharlieApp = angular.module("dessinemoicharlie", ['dessinemoicharlieControllers', 'ngRoute']);
+dessinemoicharlieApp = angular.module("dessinemoicharlie", [
+  'dessinemoicharlieControllers', 
+  'ngRoute',
+  'angulartics', 'angulartics.google.analytics'
+]);
 
 dessinemoicharlieApp.config(['$routeProvider', function($routeProvider) {
     $routeProvider.
