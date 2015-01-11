@@ -1,10 +1,11 @@
 dessinemoicharlieApp = angular.module("dessinemoicharlie", [
   'dessinemoicharlieControllers', 
   'ngRoute',
-  'angulartics', 'angulartics.google.analytics'
+  'angulartics', 'angulartics.google.analytics',
+  'pascalprecht.translate'
 ]);
 
-dessinemoicharlieApp.config(['$routeProvider', function($routeProvider) {
+dessinemoicharlieApp.config(['$routeProvider', '$translateProvider', function($routeProvider, $translateProvider) {
     $routeProvider.
       when('/', {
         templateUrl: '/html/partials/drawing-list.html',
@@ -20,5 +21,13 @@ dessinemoicharlieApp.config(['$routeProvider', function($routeProvider) {
       otherwise({
         redirectTo: '/'
       });
+
+    $translateProvider.useStaticFilesLoader({
+      prefix: '/languages/',
+      suffix: '.json'
+    });
+    $translateProvider.determinePreferredLanguage();
+
+    // $translateProvider.useLocalStorage();
 }]);
 
