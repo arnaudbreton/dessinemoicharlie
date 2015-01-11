@@ -38,8 +38,7 @@ app.get('/api/drawing', function (req, res) {
 
 app.post('/api/drawing', function (req, res){
   var drawing;
-  console.log("POST: ");
-  console.log(req.body);
+  console.log("POST: ", req.body);
   drawing = new models.Drawing({
     title: req.body.title,
     description: req.body.description,
