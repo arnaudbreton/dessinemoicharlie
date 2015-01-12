@@ -46,19 +46,17 @@ app.post('/api/drawing', function (req, res){
   });
   drawing.save(function (err) {
     if (!err) {
-      console.log(process.env.SENDER);
       mailjet.sendContent(process.env.SENDER,
          [process.env.SENDER],
          'Nouveau dessin reçu sur Dessine Moi Charlie',
          'text',
          'Url: ' + drawing.url);
-      return console.log("created");
-
+      return res.send(drawing);
     } else {
-      return console.log(err);
+      console.error(err);
+      return res.sendStatus(400);
     }
   });
-  return res.send(drawing);
 });
 
 app.get('/api/drawing/random', function (req, res){
@@ -70,7 +68,7 @@ app.get('/api/drawing/random', function (req, res){
 		}
 		else {
 			console.log(err);
-			res.sendStatus(400);
+			return res.sendStatus(400);
 		}
 	};
 
@@ -95,7 +93,8 @@ app.get('/api/drawing/:id', function (req, res){
     if (!err) {
       return res.send(drawing);
     } else {
-      return console.log(err);
+      console.log(err);
+      return res.sendStatus(404);
     }
   });
 });
@@ -108,10 +107,11 @@ app.put('/api/drawing/:id', function (req, res){
     return drawing.save(function (err) {
       if (!err) {
         console.log("updated");
+        return res.send(drawing);
       } else {
         console.log(err);
+        return res.sendStatus(400);
       }
-      return res.send(drawing);
     });
   });
 });
