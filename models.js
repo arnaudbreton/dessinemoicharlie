@@ -7,7 +7,7 @@ var Drawing = new Schema({
     approved: { type: Boolean, required: true, default: false },
     url: { type: String, unique: true },  
     modified: { type: Date, default: Date.now },
-    rnd: { type: Number, default: Math.random(), index: true }
+    rnd: { type: Number, default: Math.random, index: true }
 });
 
 Drawing.set('toJSON', {
