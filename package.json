@@ -25,6 +25,7 @@
     "express": "^4.10.7",
     "mailjet-sendemail": "^1.1.3",
     "method-override": "^2.3.1",
-    "mongoose": "^3.8.21"
+    "mongoose": "^3.8.21",
+    "newrelic": "~1.14.6"
   }
 }
