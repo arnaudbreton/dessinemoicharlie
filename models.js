@@ -3,7 +3,7 @@ var mongoose = require('mongoose'),
 
 var Drawing = new Schema({  
     title: { type: String, required: true },  
-    description: { type: String, required: true },  
+    description: { type: String },  
     approved: { type: Boolean, required: true, default: false },
     url: { type: String, unique: true },  
     modified: { type: Date, default: Date.now },
