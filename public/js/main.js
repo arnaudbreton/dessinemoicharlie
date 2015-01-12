@@ -26,8 +26,15 @@ dessinemoicharlieApp.config(['$routeProvider', '$translateProvider', function($r
       prefix: '/languages/',
       suffix: '.json'
     });
-    $translateProvider.determinePreferredLanguage();
 
-    // $translateProvider.useLocalStorage();
+    $translateProvider.registerAvailableLanguageKeys(
+        ['fr', 'en'],
+        {
+            'en*': 'en',
+            'fr*': 'fr',
+            '*': 'en' // must be last!
+        }
+    );
+    $translateProvider.determinePreferredLanguage();
 }]);
 
